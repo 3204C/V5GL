@@ -5,6 +5,7 @@ class V5GLError(Exception):
         self.message = message
         super().__init__(self.message)
 
+
 class V5Application:
     # bg and background are different names for the same thing, both will produce desired result. Refresh rate determines
     # the screen refresh rate in hertz
@@ -19,3 +20,8 @@ class V5Application:
         brain.screen.set_fill_color(self, self.background)
         brain.screen.set_pen_color(self, Color.TRANSPARENT)
         brain.screen.draw_rectangle(0, 0, 479, 239)
+
+    def Run(self):
+        brain.screen.pressed()
+
+
